@@ -252,7 +252,7 @@ body {
 }
 
 .hero-content {
-    max-width: 1200px; /* Layout width badha di taake screen fill ho */
+    max-width: 1200px;
     margin: 0 auto;
     text-align: center;
     color: #ffffff;
@@ -276,7 +276,7 @@ body {
 }
 
 .hero-title {
-    font-size: 5.5rem; /* Text size bada kar diya */
+    font-size: 5.5rem;
     font-weight: 900;
     letter-spacing: -2px;
     line-height: 1;
@@ -291,7 +291,7 @@ body {
 }
 
 .hero-desc {
-    font-size: 1.15rem; /* Paragraph text bada kiya taake readable ho */
+    font-size: 1.15rem; 
     line-height: 1.7;
     margin-bottom: 25px;
     color: rgba(255, 255, 255, 0.95);
@@ -311,7 +311,7 @@ body {
 
 /* Wide Container for Badge Grid rows */
 .showcase-container {
-    max-width: 1200px; /* Spacing width badha di */
+    max-width: 1200px;
     margin: 100px auto;
     padding: 0 20px;
     display: flex;
@@ -321,7 +321,7 @@ body {
 
 /* Category Header Text with Maroon Accent Triangle */
 .category-title {
-    font-size: 3.2rem; /* Best Clubs heading badi kar di */
+    font-size: 3.2rem; 
     font-weight: 900;
     color: #000000;
     display: flex;
@@ -357,7 +357,7 @@ body {
 }
 
 .club-logo {
-    width: 120px; /* Badges ka size bada kar diya */
+    width: 120px; 
     height: 120px;
     object-fit: contain;
     margin-bottom: 18px;
@@ -392,7 +392,7 @@ body {
 }
 
 .footer-heading {
-    font-size: 3.2rem; /* Footer heading bold aur badi kar di */
+    font-size: 3.2rem; 
     font-weight: 900;
     color: #ffffff;
     line-height: 1.2;
