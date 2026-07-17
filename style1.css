@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. GLOBAL STYLES & LAYOUT CENTERING
+   STYLE FOR SCREEN 1 - LEFT MARGIN GAP + RIGHT FULL LAYOUT (style_screen1.css)
    ========================================================================== */
 * {
     margin: 0;
@@ -12,24 +12,23 @@ body {
     background-color: #f5f5f5;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start; /* Left side alignment */
     justify-content: flex-start;
     min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
 }
 
-/* Base Wrapper for layout consistency */
+/* Creating the exact left gap for the entire layout */
 .logo-header, 
 .main-form-section {
-    width: 100%;
-    max-width: 1100px;
+    margin-left: 50px; /* Perfect uniform gap from left side */
+    width: calc(100% - 50px); /* Stretches the layout completely to the right edge */
 }
 
-/* ==========================================================================
-   2. SCREEN 1 STYLES (Form & Header)
-   ========================================================================== */
 .logo-header {
     background-color: #ffffff;
-    padding: 25px 0 25px 80px;
+    padding: 25px 40px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -46,11 +45,10 @@ body {
     object-fit: contain;
 }
 
-/* Maroon Section with exact diagonal angle bottom cut */
+/* Maroon section starts after the left gap and touches the right screen edge */
 .main-form-section {
     background-color: #81292b;
-    padding: 80px 80px 100px 80px; 
-    margin-left: 40px;
+    padding: 60px 60px 100px 40px;
     position: relative;
     clip-path: polygon(0 0, 100% 0, 100% 88%, 82% 100%, 0 100%);
 }
@@ -58,49 +56,37 @@ body {
 .form-container-wrapper {
     display: flex;
     justify-content: space-between;
-    gap: 80px;
+    gap: 60px;
+    width: 100%;
 }
 
 .left-info-column {
-    flex: 1.1;
-    padding-top: 50px;
+    flex: 1;
 }
 
-/* Match actual "Submission" title font styling */
 .form-main-title {
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 800;
-    margin-bottom: 25px;
-    letter-spacing: -1px;
+    margin-bottom: 20px;
     color: #ffffff;
 }
 
-/* Soft black shade for left column description text */
 .form-desc-text {
     font-size: 0.95rem;
     line-height: 1.6;
     color: #1a1a1a;
     font-weight: 600;
-    margin-bottom: 35px;
-    max-width: 440px;
+    margin-bottom: 30px;
 }
 
-/* Target deadline font size and styling */
 .form-deadline-text {
-    font-size: 1.5rem;
-    line-height: 1.3;
+    font-size: 1.3rem;
     color: #1a1a1a;
     font-weight: 800;
-}
-
-.form-deadline-text strong {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #1a1a1a;
 }
 
 .right-form-column {
-    flex: 0.9;
+    flex: 1.1;
 }
 
 .submission-form {
@@ -109,153 +95,67 @@ body {
     gap: 15px;
 }
 
-/* White border, custom padding inputs */
 .input-group input {
     width: 100%;
     background-color: transparent;
-    border: 1.5px solid #ffffff;
-    padding: 12px 18px;
+    border: 1px solid #ffffff;
+    padding: 10px 15px;
     color: #ffffff;
-    font-size: 0.95rem;
     outline: none;
 }
 
-.input-group input::placeholder {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-/* "Which Award" Subheading */
 .award-section-title {
     color: #1a1a1a;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 800;
-    margin-top: 25px;
-    margin-bottom: 2px;
+    margin-top: 20px;
 }
 
 .award-subtitle-note {
     color: #1a1a1a;
-    font-size: 0.65rem;
-    margin-bottom: 20px;
-    font-weight: 700;
+    font-size: 0.7rem;
+    margin-bottom: 15px;
 }
 
 .award-row {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .category-header-row {
     display: flex;
-    justify-content: flex-start; 
     align-items: center;
-    gap: 15px;                 
-    margin-bottom: 8px;
-    width: 100%;
+    gap: 10px;
+    margin-bottom: 5px;
 }
-/* Hide default checkbox and style custom label with custom tick */
-/* ==========================================================================
-   UPDATED CHECKBOX & TICK STYLES
-   ========================================================================== */
 
-/* Checkbox label container spacing */
 .checkbox-container {
     color: #ffffff;
-    font-size: 0.95rem;
-    font-weight: 600;
     display: flex;
     align-items: center;
-    gap: 12px; /* Text aur Checkbox ke darmiyan gap */
-    cursor: pointer;
+    gap: 10px;
 }
 
-/* Default browser checkbox ko stylish aur visible banane ke liye */
-.checkbox-container input[type="checkbox"] {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 18px;
-    height: 18px;
-    border: 2px solid #ffffff; /* Checkbox ka border white */
-    border-radius: 2px;
-    background-color: transparent;
-    display: inline-grid;
-    place-content: center;
-    cursor: pointer;
-    position: relative;
-    transition: all 0.15s ease-in-out;
-}
-
-/* Hover par thoda light opacity change */
-.checkbox-container input[type="checkbox"]:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* Jab checkbox checked ho, toh uske andar tick icon dalo */
-.checkbox-container input[type="checkbox"]:checked::before {
-    content: "✓";
-    font-size: 1.1rem;
-    color: #ffffff;
-    font-weight: 900;
-    line-height: 1;
-}
-
-/* Purani checkmark-icon class jo HTML mein thi, use hide kar dein taaki double tick na ho */
-.checkmark-icon {
-    display: none !important;
-}
-
-/* Right side white square box (jo design ke right side par hai) */
-.right-square-box {
-    background-color: #ffffff;
-    width: 18px;
-    height: 18px;
-    border-radius: 2px;
-    display: block;
-}
-
-/* Form textareas */
 .award-row textarea {
     width: 100%;
-    height: 75px;
+    height: 70px;
     background-color: transparent;
-    border: 1.5px solid #ffffff;
+    border: 1px solid #ffffff;
     color: #ffffff;
-    padding: 12px 15px;
-    font-size: 0.85rem;
+    padding: 10px;
     resize: none;
     outline: none;
-}
-
-.award-row textarea::placeholder {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-/* Wide Rounded Submission Button aligned perfectly */
-.submit-button-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    width: 100%;
 }
 
 .submit-success-btn {
     background-color: #ffffff;
     color: #1a1a1a;
     border: none;
-    padding: 15px 0;
+    padding: 12px 0;
     width: 100%;
-    font-size: 1.4rem;
-    font-weight: 500;
-    border-radius: 4px;
+    font-size: 1.2rem;
+    font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
-    cursor: pointer;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.submit-success-btn .tick-icon {
-    font-size: 1.8rem;
-    color: #1a1a1a;
-    font-weight: 300;
+    gap: 10px;
 }
